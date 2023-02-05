@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
   position: fixed;
   bottom: 0;
 
-  padding-bottom: var(--spacing-xl);
+  padding-block: var(--spacing-xl);
 `;
 
 const Footer = ({ nextSection, prevSection, sectionIndex }) => {
