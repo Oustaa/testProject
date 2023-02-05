@@ -38,7 +38,13 @@ const App = () => {
   return (
     <>
       <Header sectionIndex={section} />
-      <Container>{SECTIONS[section - 1]}</Container>
+      <Container>
+        <Interests sectionIndex={section} />
+        <CreditsCredentials sectionIndex={section} />
+        <Preferences sectionIndex={section} />
+        <Funding sectionIndex={section} />
+        <Confirmation sectionIndex={section} />
+      </Container>
       <Footer
         sectionIndex={section}
         nextSection={nextSection}

@@ -4,6 +4,7 @@ import InterestsItem from "./InterestsItem";
 
 import styled from "styled-components";
 import { StyledSectionTitle, StyledSection } from "../../styles";
+import PageTransition from "../../PageTransition";
 
 const InterestsCategories = [
   "Business",
@@ -37,20 +38,22 @@ const StyledInterests = styled.div`
   }
 `;
 
-const Interests = () => {
+const Interests = ({ sectionIndex }) => {
   return (
-    <StyledSection>
-      <header>
-        <StyledSectionTitle>
-          What Interests you the most right now?
-        </StyledSectionTitle>
-      </header>
-      <StyledInterests>
-        {InterestsCategories.map((Interest, index) => (
-          <InterestsItem text={Interest} key={index} />
-        ))}
-      </StyledInterests>
-    </StyledSection>
+    <PageTransition sectionIndex={sectionIndex} currentSectionIndex={1}>
+      <StyledSection>
+        <header>
+          <StyledSectionTitle>
+            What Interests you the most right now?
+          </StyledSectionTitle>
+        </header>
+        <StyledInterests>
+          {InterestsCategories.map((Interest, index) => (
+            <InterestsItem text={Interest} key={index} />
+          ))}
+        </StyledInterests>
+      </StyledSection>
+    </PageTransition>
   );
 };
 
